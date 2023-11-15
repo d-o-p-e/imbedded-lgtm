@@ -1,0 +1,11 @@
+[Unit]
+Description=Streaming Service in Raspberry Pi
+
+[Service]
+WorkingDirectory=/home/lgtm/imbedded-lgtm/stream
+User=lgtm
+ExecStart=/usr/bin/python3 -m uvicorn --port 8000 main:app
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
