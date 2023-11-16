@@ -1,4 +1,6 @@
 import cv2
+from functools import lru_cache
+
 from enums.quality import Quality
 
 class Video():
@@ -27,3 +29,7 @@ class Video():
     def __del__(self):
         print('Video: Release')
         self.cap.release()
+
+@lru_cache()
+def get_video():
+    return Video()
