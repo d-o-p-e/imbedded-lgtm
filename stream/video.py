@@ -32,6 +32,12 @@ class Video():
         print('Video: Release')
         self.cap.release()
 
+video: Video
+
 # @lru_cache()
-def get_video():
-    return Video()
+async def get_video():
+    return video
+
+async def set_video():
+    global video
+    video = Video()
